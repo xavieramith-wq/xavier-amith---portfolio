@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Xavier Amith portfolio website showcasing projects, skills, education, certifications, and coding profiles."
+    />
+    <title>Xavier Amith - Portfolio</title>
+  </head>
+  <body class="bg-ink">
+    <div id="root"></div>
+    <!-- Contact form moved into the React app so it doesn't flash before mount -->
+    <div
+      id="boot-help"
+      hidden
+      style="
+        margin: 2rem auto;
+        max-width: 42rem;
+        border: 1px solid #1f2937;
+        border-radius: 18px;
+        padding: 1.25rem 1.5rem;
+        font-family: system-ui, sans-serif;
+        color: #e5e7eb;
+        background: #0f172a;
+      "
+    >
+      <strong style="display: block; margin-bottom: 0.5rem"
+        >This React app needs Vite to process JSX.</strong
+      >
+      <span style="display: block; line-height: 1.6">
+        Use <code>npm run dev</code> while developing, or run
+        <code>npm run build</code> and serve <code>dist/index.html</code> for a
+        static preview.
+      </span>
+    </div>
+    <script>
+      window.setTimeout(() => {
+        const root = document.getElementById("root");
+        const help = document.getElementById("boot-help");
+
+        if (!root || !help) {
+          return;
+        }
+
+        const appMounted =
+          root.childElementCount > 0 || root.textContent.trim().length > 0;
+
+        if (appMounted) {
+          help.remove();
+          return;
+        }
+
+        help.hidden = false;
+      }, 1200);
+    </script>
+    <script>
+      // Only attach contact form handler if the form exists in the static HTML.
+      // The actual contact form is rendered by the React app; keeping this
+      // defensive prevents runtime errors when the form is absent.
+      (function () {
+        const contactForm = document.getElementById("contactForm");
+        if (!contactForm) return;
+
+        contactForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+          };
+
+          try {
+            const res = await fetch("http://localhost:5000/contact", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+            const result = await res.json();
+            alert(result.success ? "Sent!" : "Error");
+          } catch (err) {
+            console.error(err);
+            alert("Error");
+          }
+        });
+      })();
+    </script>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>

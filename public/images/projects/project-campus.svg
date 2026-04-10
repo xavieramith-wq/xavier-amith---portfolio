@@ -1,0 +1,22 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#E5E7EB"/>
+  <rect x="716" y="82" width="376" height="556" rx="54" fill="#111827"/>
+  <rect x="740" y="122" width="328" height="476" rx="34" fill="#F8FAFC"/>
+  <rect x="822" y="94" width="162" height="12" rx="6" fill="#D1D5DB"/>
+  <circle cx="904" cy="570" r="18" fill="#D1D5DB"/>
+  <rect x="774" y="162" width="120" height="42" rx="18" fill="#E0F2FE"/>
+  <circle cx="806" cy="184" r="16" fill="#FDBA74"/>
+  <path d="M798 184C798 173.507 806.507 165 817 165C827.493 165 836 173.507 836 184" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+  <rect x="918" y="164" width="108" height="22" rx="11" fill="#CBD5E1"/>
+  <rect x="918" y="198" width="86" height="18" rx="9" fill="#E2E8F0"/>
+  <rect x="774" y="242" width="252" height="148" rx="28" fill="#EEF2FF"/>
+  <path d="M804 340C844 280 898 302 932 256C956 224 992 232 1014 278" stroke="#818CF8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M810 320C838 350 882 354 918 330C954 306 984 314 1014 340" stroke="#A78BFA" stroke-width="8" stroke-linecap="round"/>
+  <rect x="774" y="420" width="110" height="102" rx="24" fill="#F5F3FF"/>
+  <rect x="916" y="420" width="110" height="102" rx="24" fill="#EEF2FF"/>
+  <rect x="84" y="120" width="450" height="320" rx="24" fill="#D1D5DB"/>
+  <rect x="126" y="160" width="366" height="230" rx="12" fill="#F8FAFC"/>
+  <rect x="614" y="132" width="76" height="452" rx="38" fill="#D1D5DB"/>
+  <rect x="84" y="500" width="260" height="34" rx="17" fill="#CBD5E1"/>
+  <rect x="84" y="552" width="190" height="24" rx="12" fill="#E5E7EB"/>
+</svg>
