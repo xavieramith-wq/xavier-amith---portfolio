@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
-const DEFAULT_CERTIFICATE_IMAGE = "/images/certificates/certificate-placeholder.svg";
+const DEFAULT_CERTIFICATE_IMAGE =
+  "/images/certificates/certificate-placeholder.svg";
 
 function getCertificateDownloadInfo(certificate) {
   const href =
@@ -113,6 +114,10 @@ export default function CertificationsSection({
                     src={certificate.image || DEFAULT_CERTIFICATE_IMAGE}
                     alt={`${certificate.name} certificate preview`}
                     className="cert-showcase-image"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = DEFAULT_CERTIFICATE_IMAGE;
+                    }}
                   />
                 </div>
               </button>
@@ -153,12 +158,16 @@ export default function CertificationsSection({
             </button>
 
             <div className="cert-modal-preview">
-                <img
-                  src={selectedCertificate.image || DEFAULT_CERTIFICATE_IMAGE}
-                  alt={`${selectedCertificate.name} full certificate preview`}
-                  className="cert-modal-image"
-                />
-              </div>
+              <img
+                src={selectedCertificate.image || DEFAULT_CERTIFICATE_IMAGE}
+                alt={`${selectedCertificate.name} full certificate preview`}
+                className="cert-modal-image"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = DEFAULT_CERTIFICATE_IMAGE;
+                }}
+              />
+            </div>
 
             <div className="cert-modal-content">
               <p className="cert-modal-label">Certificate Details</p>

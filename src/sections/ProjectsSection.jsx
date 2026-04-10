@@ -55,6 +55,11 @@ export default function ProjectsSection({
                   src={project.image}
                   alt={project.title}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src =
+                      "/images/certificates/certificate-placeholder.svg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#101826] via-transparent to-transparent" />
                 <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-panel/80 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-cyan-200">
