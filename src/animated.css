@@ -2047,6 +2047,7 @@
 .card-base {
   position: relative;
   overflow: hidden;
+  max-width: 100%;
   box-shadow: 0 22px 70px rgba(7, 11, 20, 0.18);
   transition:
     transform 260ms ease,
@@ -3491,32 +3492,42 @@ body.theme-light .hero-cyber-lightning {
   }
 
   .hero-cyber-card {
-    opacity: 0.48;
-    --card-transform: scale(0.76);
+    opacity: 0.4;
+    --card-transform: scale(0.65);
   }
 
   .hero-cyber-card-laptop {
-    --card-transform: perspective(900px) rotateX(4deg) rotateY(3deg) scale(0.76);
+    --card-transform: perspective(900px) rotateX(4deg) rotateY(3deg) scale(0.65);
   }
 
   .hero-cyber-card-monitor {
-    left: -5%;
-    top: 9%;
+    left: 2%;
+    top: 5%;
   }
 
   .hero-cyber-card-laptop {
-    left: -8%;
-    bottom: 11%;
+    left: 2%;
+    bottom: 8%;
   }
 
   .hero-cyber-card-cloud {
-    right: -8%;
-    top: 8%;
+    right: 2%;
+    top: 4%;
   }
 
   .hero-cyber-card-graph {
-    right: -8%;
-    bottom: 10%;
+    right: 2%;
+    bottom: 7%;
+  }
+
+  @media (max-width: 520px) {
+    .hero-cyber-card {
+      display: none;
+    }
+    
+    .hero-cyber-stage {
+      min-height: 480px;
+    }
   }
 
   .hero-cyber-lightning {
@@ -3588,6 +3599,47 @@ body.theme-light .hero-cyber-lightning {
   .back-to-top {
     right: 1rem;
     bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-shell {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .hero-cyber-ticker-badge {
+    display: none;
+  }
+  
+  .hero-cyber-ticker-board {
+    padding: 0.5rem 1rem;
+  }
+  
+  .hero-cyber-ticker-text {
+    font-size: 0.9rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .project-card .p-7 {
+    padding: 1.25rem;
+  }
+  
+  .cert-modal-overlay {
+    padding: 0;
+  }
+  
+  .cert-modal {
+    border-radius: 0;
+    max-height: 100vh;
+    height: 100vh;
+  }
+  
+  .sync-pill {
+    display: none !important;
   }
 }
 

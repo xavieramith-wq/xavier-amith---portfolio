@@ -61,7 +61,7 @@ export default function AboutSection({
               <img
                 src={profileImage}
                 alt="Portrait of Xavier Amith"
-                className="relative z-10 h-full min-h-[380px] w-full rounded-[1.5rem] border border-white/10 object-cover"
+                className="relative z-10 h-auto w-full rounded-[1.5rem] border border-white/10 object-cover"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src =

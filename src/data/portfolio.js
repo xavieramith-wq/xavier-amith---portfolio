@@ -130,7 +130,7 @@ export const projects = [
     github: "https://github.com/xavieramith/e-learning-platform",
     demo: "https://elearning-demo.vercel.app",
     category: "Web",
-    image: "/images/projects/project-elearning.svg",
+    image: "/images/profile/projects/project-elearning.svg",
   },
   {
     title: "EventSphere – Smart Campus Conference App",
@@ -147,7 +147,7 @@ export const projects = [
     github: "https://github.com/xavieramith/campus-connect-app--",
     demo: "https://campus-connect-demo.vercel.app--",
     category: "Mobile",
-    image: "/images/projects/App.jpeg",
+    image: "/images/profile/projects/App.jpeg",
   },
   {
     title: "Interactive Portfolio Platform",
@@ -164,7 +164,7 @@ export const projects = [
     github: "https://github.com/xavieramith/portfolio-ui-system",
     demo: "https://portfolio-ui-demo.vercel.app/---",
     category: "Design",
-    image: "/images/projects/Portfolio Web.png",
+    image: "/images/profile/projects/Portfolio Web.png",
   },
 ];
 

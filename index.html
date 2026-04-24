@@ -14,7 +14,6 @@
     <!-- Contact form moved into the React app so it doesn't flash before mount -->
     <div
       id="boot-help"
-      hidden
       style="
         margin: 2rem auto;
         max-width: 42rem;
@@ -36,24 +35,37 @@
       </span>
     </div>
     <script>
-      window.setTimeout(() => {
+      (function () {
         const root = document.getElementById("root");
         const help = document.getElementById("boot-help");
+        if (!root || !help) return;
 
-        if (!root || !help) {
-          return;
-        }
-
-        const appMounted =
+        // If app already mounted, remove the help message immediately.
+        const isMounted =
           root.childElementCount > 0 || root.textContent.trim().length > 0;
-
-        if (appMounted) {
+        if (isMounted) {
           help.remove();
           return;
         }
 
-        help.hidden = false;
-      }, 1200);
+        // Otherwise keep the help visible and remove it once React mounts.
+        const observer = new MutationObserver((mutations, obs) => {
+          const mounted =
+            root.childElementCount > 0 || root.textContent.trim().length > 0;
+          if (mounted) {
+            help.remove();
+            obs.disconnect();
+          }
+        });
+
+        observer.observe(root, { childList: true, subtree: true });
+
+        // Safety: remove the help after 20s to avoid a permanent message.
+        setTimeout(() => {
+          if (document.body.contains(help)) help.remove();
+          observer.disconnect();
+        }, 20000);
+      })();
     </script>
     <script>
       // Only attach contact form handler if the form exists in the static HTML.

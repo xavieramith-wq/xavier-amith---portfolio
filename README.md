@@ -1,75 +1,65 @@
-Frontend
-1. Project entry & setup
+# Xavier Amith — Portfolio
 
-The browser loads index.html which pulls in the Vite-bundled JS/CSS. React mounts from src/main.jsx and the app shell comes alive.
-index.html
-Minimal HTML shell — just a
-and the script tag. Vite injects the bundle here.
-src/main.jsx
-React entry point — calls ReactDOM.createRoot() and renders into the root div.
-vite.config.js
-Configures the dev server (HMR, port) and production build (asset hashing, base path).
+A personal portfolio website built with React, Vite and Tailwind CSS, including a small Express backend for handling contact form submissions and email delivery.
 
-2. App layout & routing
+**Live demo**: (add link here if deployed)
 
-App.jsx wires together global styles, the header/footer shell, and all page sections in one top-level tree.
-src/App.jsx
-Top-level layout — imports global CSS, SiteHeader, SiteFooter, and all section components.
-AnimatedPortfolioApp.jsx
-Wraps sections with animation timing and orchestration logic (GSAP/AOS coordination).
-src/index.css + animated.css
-Tailwind layers + custom keyframe animations used across the whole UI.
+## Features
 
-3. UI components & sections
+- **Interactive UI**: Animated components and smooth transitions.
+- **Content driven**: Portfolio content pulled from local data and Sanity (optional).
+- **Contact form**: Backend API to store/send messages.
+- **Responsive**: Mobile-first design with Tailwind CSS.
 
-Small, reusable UI primitives (buttons, fields, tiles) are composed into full page sections like About, Projects, and Contact.
-src/ui/*
-Generic building blocks — ActionButton, FloatingField, IconTile. No page-specific logic here.
-src/sections/*
-Page sections (Home, About, Projects, Contact) — each focused on one concern, composing ui/ primitives.
-src/components/layout/*
-SiteHeader, SiteFooter, and SVG icon components for consistent, accessible navigation.
+## Tech Stack
 
-Content
-4. Content & data layer
+- **Frontend**: Vite, React, Tailwind CSS
+- **Backend**: Node.js, Express, Mongoose (MongoDB)
+- **CMS**: Sanity (optional, configured in `lib/sanityClient.js`)
 
-Content is fetched from Sanity CMS if configured, or falls back to local data files. A custom hook abstracts this entirely.
-useLivePortfolioContent.js
-Custom hook — fetches content from CMS or local fallback, optionally subscribing to real-time updates.
-src/data/portfolio.js
-Local content (projects, skills, bio) — the fallback used when CMS is not configured.
-src/lib/sanityClient.js
-Wraps the Sanity API config. Swap in your project ID/dataset to enable live CMS content.
+## Architecture & Implementation
 
-Backend
-5. Express API server
+### Frontend
+1. **Project Entry & Setup**: The browser loads `index.html` which pulls in the Vite-bundled JS/CSS. React mounts from `src/main.jsx`.
+2. **App Layout & Routing**: `App.jsx` wires together global styles and page sections. `AnimatedPortfolioApp.jsx` handles orchestration.
+3. **UI Components**: Reusable primitives in `src/ui/*` and page sections in `src/sections/*`.
 
-An Express server in backend/ handles contact form submissions — validating, storing, and emailing them.
-backend/server.js
-Express entry — defines the /contact route, applies CORS, and wires up middleware.
-backend/models/Contact.js
-Mongoose schema for contact messages. Validates fields and persists to MongoDB.
-Nodemailer
-Sends email notifications on new contact submissions. Credentials live in environment variables.
+### Content & Data
+- Content is fetched via `useLivePortfolioContent.js` hook, falling back to `src/data/portfolio.js` if Sanity is not configured.
 
-Deploy
-6. Build & deployment
+### Backend
+- An Express server in `backend/` handles contact form submissions, validating and persisting them to MongoDB via Mongoose and sending emails via Nodemailer.
 
-The frontend builds to static assets for any CDN. The backend deploys as a Node service with env vars for secrets.
-npm run build → dist/
-Vite produces hashed HTML/CSS/JS. Deploy the dist/ folder to Netlify, Vercel, or S3.
-Backend hosting
-Run the Express server on Heroku, Render, or Railway. Set MONGO_URI, EMAIL_USER, EMAIL_PASS.
-CI/CD
-Automate: run build → deploy dist/ on push. Use PM2 or platform process manager for the API.
+## Getting Started
 
-Security & Quality
-7. Security & best practices
+### Prerequisites
+- Node.js 18+ installed
+- (Optional) MongoDB instance for the backend
 
-Lock down the contact endpoint, validate all input, and ensure accessible, performant output in production.
-CORS + rate limiting
-Restrict allowed origins on the API. Add rate limiting or CAPTCHA to prevent contact form abuse.
-Input validation
-Use express-validator on the contact route. Never trust raw user data from the request body.
-Accessibility & performance
-Semantic HTML, keyboard focus, ARIA where needed, prefers-reduced-motion, and Tailwind purge for small CSS.
+### Installation
+```bash
+# Install root dependencies
+npm install
+
+# Install backend dependencies
+cd backend && npm install
+```
+
+### Running Locally
+```bash
+# Run frontend (Vite dev server)
+npm run dev
+
+# Run backend (API server)
+cd backend && npm start
+```
+
+## Project Structure
+- `index.html`: Entry HTML
+- `src/main.jsx`: React entry
+- `src/App.jsx`: Main layout
+- `src/sections/`: UI Sections (About, Projects, etc.)
+- `backend/server.js`: Express API entry
+
+## License
+This project is open source.
