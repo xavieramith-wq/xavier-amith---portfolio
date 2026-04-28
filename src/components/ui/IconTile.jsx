@@ -14,7 +14,7 @@ export default function IconTile({ label, accent = false }) {
 
   return (
     <span
-      className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl border text-sm font-bold ${
+      className={`inline-flex h-12 w-12 items-center justify-center rounded-none border text-sm font-bold ${
         accent
           ? "border-accent/40 bg-accent/15 text-accent"
           : "border-white/10 bg-white/5 text-slate-200"

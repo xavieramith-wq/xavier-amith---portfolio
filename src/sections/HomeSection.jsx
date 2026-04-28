@@ -16,7 +16,7 @@ export default function HomeSection({
       data-section
     >
       <div className="mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-        <div className="hero-cyber-stage">
+        <div className="hero-cyber-stage sharp-edges">
           <div className="hero-cyber-stars" aria-hidden="true">
             {Array.from({ length: 28 }).map((_, index) => (
               <span
@@ -64,7 +64,7 @@ export default function HomeSection({
           </span>
 
           <article
-            className="hero-cyber-card hero-cyber-card-monitor"
+            className="hero-cyber-card hero-cyber-card-monitor sharp-edges"
             aria-hidden="true"
           >
             <p className="hero-cyber-card-label">Analytics</p>
@@ -83,7 +83,7 @@ export default function HomeSection({
           </article>
 
           <article
-            className="hero-cyber-card hero-cyber-card-laptop"
+            className="hero-cyber-card hero-cyber-card-laptop sharp-edges"
             aria-hidden="true"
           >
             <p className="hero-cyber-card-label">Coding & Debugging</p>
@@ -100,7 +100,7 @@ export default function HomeSection({
           </article>
 
           <article
-            className="hero-cyber-card hero-cyber-card-cloud"
+            className="hero-cyber-card hero-cyber-card-cloud sharp-edges"
             aria-hidden="true"
           >
             <p className="hero-cyber-card-label">Cloud & Network</p>
@@ -117,7 +117,7 @@ export default function HomeSection({
           </article>
 
           <article
-            className="hero-cyber-card hero-cyber-card-graph"
+            className="hero-cyber-card hero-cyber-card-graph sharp-edges"
             aria-hidden="true"
           >
             <p className="hero-cyber-card-label">AI Systems</p>
@@ -160,14 +160,14 @@ export default function HomeSection({
                 <ActionButton
                   type="button"
                   onClick={() => navigateTo("projects")}
-                  className="hero-button-primary inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-white"
+                  className="hero-button-primary inline-flex items-center justify-center rounded-none px-6 py-3 text-base font-semibold text-white"
                 >
                   Explore Projects
                 </ActionButton>
                 <ActionButton
                   type="button"
                   onClick={() => navigateTo("contact")}
-                  className="hero-button-secondary inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-white"
+                  className="hero-button-secondary inline-flex items-center justify-center rounded-none px-6 py-3 text-base font-semibold text-white"
                 >
                   Get In Touch
                 </ActionButton>
@@ -179,7 +179,7 @@ export default function HomeSection({
 
       <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <div
-          className="card-base glass-surface glass-edge rounded-[2rem] border border-white/10 bg-white/5 p-6 text-left sm:p-8"
+          className="card-base glass-surface glass-edge sharp-edges rounded-none border border-white/10 bg-white/5 p-6 text-left sm:p-8"
           data-aos="fade-up"
         >
           <p className="section-eyebrow">Resume</p>
@@ -194,14 +194,14 @@ export default function HomeSection({
             <a
               href={resumeUrl}
               download
-              className="hero-button-primary inline-flex items-center justify-center rounded-2xl px-7 py-3 text-base font-semibold text-white shadow-lg"
+              className="hero-button-primary inline-flex items-center justify-center rounded-none px-7 py-3 text-base font-semibold text-white shadow-lg"
             >
               Download Resume
             </a>
             <ActionButton
               type="button"
               onClick={() => navigateTo("about")}
-              className="hero-button-secondary inline-flex items-center justify-center rounded-2xl px-7 py-3 text-base font-semibold text-white"
+              className="hero-button-secondary inline-flex items-center justify-center rounded-none px-7 py-3 text-base font-semibold text-white"
             >
               Learn More
             </ActionButton>
@@ -225,7 +225,7 @@ export default function HomeSection({
           ].map((item) => (
             <div
               key={item.title}
-              className="card-base glass-surface glass-edge rounded-[1.8rem] border border-white/10 bg-white/5 p-5"
+              className="card-base glass-surface glass-edge sharp-edges rounded-none border border-white/10 bg-white/5 p-5"
             >
               <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
                 {item.title}

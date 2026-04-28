@@ -29,7 +29,7 @@ export default function SkillsSection({
           {skillsWithLevels.map((group, groupIndex) => (
             <div
               key={group.title}
-              className="card-base glass-surface glass-edge rounded-[2rem] border border-white/10 bg-white/5 p-6"
+              className="card-base glass-surface glass-edge sharp-edges rounded-none border border-white/10 bg-white/5 p-6"
               data-aos="fade-up"
               data-aos-delay={groupIndex * 90}
             >
@@ -51,7 +51,7 @@ export default function SkillsSection({
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="skill-track">
+                    <div className="skill-track sharp-edges">
                       <div
                         className="skill-fill"
                         style={{

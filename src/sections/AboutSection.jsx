@@ -56,12 +56,12 @@ export default function AboutSection({
 
         <div className="mt-14 grid items-start gap-8 lg:grid-cols-[0.82fr_1.18fr]">
           <div data-aos="fade-right">
-            <div className="about-photo-shell card-base glass-surface glass-edge rounded-[2rem] border border-white/10 bg-white/5 p-6">
+            <div className="about-photo-shell card-base glass-surface glass-edge sharp-edges rounded-none border border-white/10 bg-white/5 p-6">
               <div className="about-photo-glow" />
               <img
                 src={profileImage}
                 alt="Portrait of Xavier Amith"
-                className="relative z-10 h-auto w-full rounded-[1.5rem] border border-white/10 object-cover"
+                className="relative z-10 h-auto w-full rounded-none border border-white/10 object-cover sharp-edges"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
@@ -75,7 +75,7 @@ export default function AboutSection({
           </div>
 
           <div
-            className="card-base glass-surface glass-edge rounded-[2rem] border border-white/10 bg-panel/70 p-6 sm:p-8"
+            className="card-base glass-surface glass-edge sharp-edges rounded-none border border-white/10 bg-panel/70 p-6 sm:p-8"
             data-aos="fade-left"
           >
             <div className="space-y-5 text-base leading-8 text-slate-300">
@@ -90,7 +90,7 @@ export default function AboutSection({
               {counterSpecs.map((counter, index) => (
                 <div
                   key={counter.label}
-                  className="stat-card card-base glass-surface glass-edge rounded-3xl border border-white/10 bg-white/5 p-5"
+                  className="stat-card card-base glass-surface glass-edge sharp-edges rounded-none border border-white/10 bg-white/5 p-5"
                   data-aos="fade-up"
                   data-aos-delay={index * 80}
                 >
