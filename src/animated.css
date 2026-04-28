@@ -148,7 +148,7 @@
   bottom: -8%;
   left: calc(8% + var(--particle-index) * 7.5%);
   display: block;
-  border-radius: 999px;
+  border-radius: 0;
   opacity: 0.38;
   animation: particleFloat calc(10s + var(--particle-index) * 0.7s) linear
     infinite;
@@ -811,7 +811,7 @@
 .hero-cyber-card-head {
   margin: 0.95rem 1rem 0.8rem;
   height: 0.5rem;
-  border-radius: 999px;
+  border-radius: 0;
   background: linear-gradient(
     90deg,
     rgba(122, 192, 255, 0.5),
@@ -830,7 +830,7 @@
 
 .hero-cyber-bars span {
   flex: 1;
-  border-radius: 0.45rem 0.45rem 0.2rem 0.2rem;
+  border-radius: 0;
   background: linear-gradient(
     180deg,
     rgba(219, 135, 255, 0.98),
@@ -1150,7 +1150,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid rgba(99, 164, 255, 0.24);
   background: rgba(99, 164, 255, 0.08);
   padding: 0.8rem 1.2rem;

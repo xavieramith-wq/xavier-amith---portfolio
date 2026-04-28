@@ -91,7 +91,7 @@ export default function HomeSection({
               viewBox="0 0 280 170"
               className="hero-cyber-svg hero-cyber-svg-code"
             >
-              <rect x="16" y="22" width="248" height="112" rx="12" />
+              <rect x="16" y="22" width="248" height="112" rx="0" />
               <path d="m76 66-22 18 22 18M114 66l22 18-22 18M168 90h44" />
               <path d="m178 50 7-6 9 2 4 8-4 8-9 2-7-6-7 6-9-2-4-8 4-8 9-2z" />
               <circle cx="182" cy="54" r="4" />
