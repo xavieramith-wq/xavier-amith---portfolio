@@ -193,7 +193,7 @@ export default function ContactSection({
               rel="noreferrer"
               className="cta-secondary inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-white"
             >
-              View Resume
+              View My Resume
             </ActionButton>
           </div>
         </div>
