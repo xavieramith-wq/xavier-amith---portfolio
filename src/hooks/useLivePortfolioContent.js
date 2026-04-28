@@ -48,7 +48,6 @@ const normalizeContent = (raw) => {
             counters: coerceArray(raw.portfolio.counters, localPortfolio.counters),
             roles: coerceArray(raw.portfolio.roles, localPortfolio.roles),
             bio: coerceArray(raw.portfolio.bio, localPortfolio.bio),
-            heroLines: coerceArray(raw.portfolio.heroLines, localPortfolio.heroLines),
             educationList: coerceArray(
               raw.portfolio.educationList,
               localPortfolio.educationList,
@@ -142,4 +141,3 @@ export default function useLivePortfolioContent() {
     [content, syncState, lastSyncedAt],
   );
 }
-

@@ -3,12 +3,6 @@ export const portfolio = {
   heroRole: "Open Source Contributor",
   heroTagline:
     "Passionate about turning ideas into elegant code. Building the future, one project at a time.",
-  heroLines: [
-    "EST. 2026 | MCA Student Portfolio",
-    "Cloud Computing | Networking | AI Systems",
-    "Software Testing | Full Stack Development",
-    "Building practical projects with real impact",
-  ],
   roles: [
     "Computer Science Student",
     "Aspiring Developer",
