@@ -160,6 +160,23 @@ export const projects = [
     category: "Design",
     image: "/images/profile/projects/Portfolio Web.png",
   },
+  {
+    title: "PropCore - Universal Propagation Intelligence",
+    description:
+      "Building interfaces for complex scientific domains - plant biology, signal processing, epidemiology, and network theory - requires more than aesthetics. It demands a unifying design language that transforms fragmented expertise into seamless insight. PropCore solves this through intentional UI/UX architecture grounded in three core principles.",
+    stack: [
+      "Figma",
+      "React",
+      "Tailwind CSS",
+      "Storybook",
+      "Express",
+      "MongoDB",
+    ],
+    github: "https://github.com/xavieramith/portfolio-ui-system",
+    demo: "https://adjust-row-48046295.figma.site/",
+    category: "Design",
+    image: "/images/profile/projects/Portfolio Web.png",
+  },
 ];
 
 export const certifications = [
