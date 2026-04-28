@@ -195,14 +195,6 @@ export default function ContactSection({
             >
               View Resume
             </ActionButton>
-            <ActionButton
-              as="a"
-              href={resumeUrl}
-              download
-              className="cta-primary inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-slate-950"
-            >
-              Download Resume
-            </ActionButton>
           </div>
         </div>
       </div>
