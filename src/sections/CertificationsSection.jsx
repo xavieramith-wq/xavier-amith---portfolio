@@ -114,6 +114,8 @@ export default function CertificationsSection({
                     src={certificate.image || DEFAULT_CERTIFICATE_IMAGE}
                     alt={`${certificate.name} certificate preview`}
                     className="cert-showcase-image"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
                       e.currentTarget.src = DEFAULT_CERTIFICATE_IMAGE;
@@ -162,6 +164,8 @@ export default function CertificationsSection({
                 src={selectedCertificate.image || DEFAULT_CERTIFICATE_IMAGE}
                 alt={`${selectedCertificate.name} full certificate preview`}
                 className="cert-modal-image"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = DEFAULT_CERTIFICATE_IMAGE;

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import ActionButton from "../components/ui/ActionButton";
 
 const defaultHeroLines = [
   "EST. 2026 | MCA Student Portfolio",
@@ -7,7 +8,12 @@ const defaultHeroLines = [
   "Building practical projects with real impact",
 ];
 
-export default function HomeSection({ portfolio, setSectionRef }) {
+export default function HomeSection({
+  portfolio,
+  typedText,
+  navigateTo,
+  setSectionRef,
+}) {
   const heroLines = portfolio.heroLines?.length
     ? portfolio.heroLines
     : defaultHeroLines;
@@ -161,7 +167,19 @@ export default function HomeSection({ portfolio, setSectionRef }) {
           </article>
 
           <div className="hero-cyber-center">
-            <div className="hero-cyber-copy font-display" role="presentation">
+            <div className="hero-cyber-copy font-display">
+              <p className="section-eyebrow mb-4 text-center text-[0.7rem] text-white/70">
+                Portfolio 2026
+              </p>
+              <h1 className="mx-auto max-w-4xl text-balance text-center font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Xavier Amith
+              </h1>
+              <p className="typing-caret mt-4 text-center text-lg font-medium text-slate-200 sm:text-xl">
+                {typedText || portfolio.heroRole}
+              </p>
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
+                {portfolio.heroTagline}
+              </p>
               <div className="hero-cyber-ticker-board">
                 <span className="hero-cyber-ticker-badge">EST</span>
                 <div className="hero-cyber-ticker-line">
@@ -177,23 +195,83 @@ export default function HomeSection({ portfolio, setSectionRef }) {
                   </div>
                 </div>
               </div>
+              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+                <ActionButton
+                  type="button"
+                  onClick={() => navigateTo("projects")}
+                  className="hero-button-primary inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-white"
+                >
+                  Explore Projects
+                </ActionButton>
+                <ActionButton
+                  type="button"
+                  onClick={() => navigateTo("contact")}
+                  className="hero-button-secondary inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-white"
+                >
+                  Get In Touch
+                </ActionButton>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-        <p className="text-lg font-semibold text-white/90">
-          Download my resume
-        </p>
-        <div className="hero-actions-clean mt-4 flex justify-center">
-          <a
-            href={resumeUrl}
-            download
-            className="hero-button-primary inline-flex items-center gap-2 rounded-2xl px-7 py-3 text-base font-semibold text-white shadow-lg"
-          >
-            Download Resume
-          </a>
+      <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <div
+          className="card-base glass-surface glass-edge rounded-[2rem] border border-white/10 bg-white/5 p-6 text-left sm:p-8"
+          data-aos="fade-up"
+        >
+          <p className="section-eyebrow">Resume</p>
+          <h2 className="mt-4 font-display text-3xl font-semibold text-white sm:text-4xl">
+            Download the latest version of my resume.
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
+            A concise snapshot of my technical skills, projects, certifications,
+            and academic background.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={resumeUrl}
+              download
+              className="hero-button-primary inline-flex items-center justify-center rounded-2xl px-7 py-3 text-base font-semibold text-white shadow-lg"
+            >
+              Download Resume
+            </a>
+            <ActionButton
+              type="button"
+              onClick={() => navigateTo("about")}
+              className="hero-button-secondary inline-flex items-center justify-center rounded-2xl px-7 py-3 text-base font-semibold text-white"
+            >
+              Learn More
+            </ActionButton>
+          </div>
+        </div>
+
+        <div
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          {[
+            {
+              title: "Core strengths",
+              value: "Cloud, AI, networking, software testing",
+            },
+            {
+              title: "Current focus",
+              value: "Hands-on project building and internship readiness",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="card-base glass-surface glass-edge rounded-[1.8rem] border border-white/10 bg-white/5 p-5"
+            >
+              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
+                {item.title}
+              </p>
+              <p className="mt-3 text-lg leading-8 text-white">{item.value}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

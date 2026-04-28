@@ -55,6 +55,8 @@ export default function ProjectsSection({
                   src={project.image}
                   alt={project.title}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src =
