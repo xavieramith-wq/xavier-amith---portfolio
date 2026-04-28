@@ -1,12 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
 import ActionButton from "../components/ui/ActionButton";
-
-const defaultHeroLines = [
-  "EST. 2026 | MCA Student Portfolio",
-  "Cloud Computing | Networking | AI Systems",
-  "Software Testing | Full Stack Development",
-  "Building practical projects with real impact",
-];
 
 export default function HomeSection({
   portfolio,
@@ -14,27 +6,6 @@ export default function HomeSection({
   navigateTo,
   setSectionRef,
 }) {
-  const heroLines = portfolio.heroLines?.length
-    ? portfolio.heroLines
-    : defaultHeroLines;
-  const tickerLines = useMemo(() => heroLines.filter(Boolean), [heroLines]);
-  const [tickerIndex, setTickerIndex] = useState(0);
-
-  useEffect(() => {
-    if (tickerLines.length <= 1) {
-      return undefined;
-    }
-
-    const tickerTimer = window.setInterval(() => {
-      setTickerIndex((currentIndex) => (currentIndex + 1) % tickerLines.length);
-    }, 2900);
-
-    return () => {
-      window.clearInterval(tickerTimer);
-    };
-  }, [tickerLines]);
-
-  const activeLine = tickerLines[tickerIndex] ?? defaultHeroLines[0];
   const resumeUrl = "/images/Xavier_Amith_Resume.pdf";
 
   return (
@@ -180,20 +151,10 @@ export default function HomeSection({
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
                 {portfolio.heroTagline}
               </p>
-              <div className="hero-cyber-ticker-board">
-                <span className="hero-cyber-ticker-badge">EST</span>
-                <div className="hero-cyber-ticker-line">
-                  <div
-                    key={activeLine}
-                    className="hero-cyber-ticker-track"
-                    style={{ "--ticker-duration": "10.5s" }}
-                  >
-                    <span className="hero-cyber-ticker-text">{activeLine}</span>
-                    <span className="hero-cyber-ticker-text" aria-hidden="true">
-                      {activeLine}
-                    </span>
-                  </div>
-                </div>
+              <div className="mt-6 flex justify-center">
+                <span className="hero-badge text-sm font-semibold text-white/90 sm:text-base">
+                  EST. 2026 | MCA Student Portfolio
+                </span>
               </div>
               <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
                 <ActionButton
